@@ -155,20 +155,29 @@ footer {
     border-top-right-radius: var(--radius);
     font-size: 1rem;
 }
-@media (max-width:900px) {
-    .hero,.section{
-        max-width: 99vw;
-        flex-direction: column;
-        gap: 18px;
-        padding: 10px 8vw;
-    }
-    .services-list{
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
-    }
-    .hero-img, .section-img {
-        width: 95vw;
-        max-width: 350px;
-    }
-}
+@media (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  button {
+    width: 100%;
+  }
