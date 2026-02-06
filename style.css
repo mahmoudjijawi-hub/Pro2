@@ -155,76 +155,75 @@ footer {
     border-top-right-radius: var(--radius);
     font-size: 1rem;
 }
-/* --- أكواد التجاوب (Responsive Design) --- */
+/* --- التعديل النهائي للتجاوب --- */
 
 @media (max-width: 768px) {
-    /* 1. القائمة العلوية: جعل العناصر تترتب عمودياً أو تصغير المسافات */
+    /* 1. إصلاح الهيدر والـ Navbar */
+    header {
+        height: auto; /* السماح للهيدر بالتمدد */
+        border-radius: 0 0 20px 20px;
+    }
+
     .navbar {
-        flex-direction: column;
+        flex-direction: column; /* وضع اللوجو فوق المنيو */
         height: auto;
-        padding: 15px;
+        padding: 15px 10px;
+        gap: 15px;
     }
 
     .menu {
-        gap: 10px;
-        margin-top: 15px;
-        flex-wrap: wrap;
+        gap: 8px; /* تقليل المسافات بين الروابط */
+        flex-wrap: wrap; /* السماح للروابط بالنزول لسطر جديد إذا لم تكفِ الشاشة */
         justify-content: center;
+        width: 100%;
     }
 
-    /* 2. قسم الهيرو (Hero) والأقسام العامة */
+    .menu a {
+        padding: 6px 10px; /* تصغير حجم أزرار القائمة */
+        font-size: 0.9rem;
+    }
+
+    /* 2. إصلاح قسم الهيرو (الصورة والنص) */
     .hero, .section {
-        flex-direction: column; /* جعل الصورة والنص فوق بعض */
+        flex-direction: column !important; /* إجبار العناصر لتصبح فوق بعضها */
+        margin: 10px;
+        padding: 20px 15px;
+        max-width: 95%; /* منع الخروج عن حواف الشاشة */
+    }
+
+    .hero-content, .section-content {
+        width: 100%;
         text-align: center;
-        padding: 20px;
-        margin: 15px auto;
     }
 
-    .section h2 {
-        border-left: none;
-        border-bottom: 4px solid var(--accent); /* تغيير شكل الخط الجانبي ليصبح تحتي */
-        padding-left: 0;
-        padding-bottom: 8px;
+    /* إصلاح الصورة في الهيرو */
+    .hero img, .section img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
     }
 
-    /* 3. خدماتنا (Services): جعل الكروت تأخذ عرضاً أكبر */
+    /* 3. إصلاح كروت الخدمات */
     .services-list {
-        gap: 16px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .services-card {
-        min-width: 100%; /* كرت واحد في كل سطر على الجوال */
+        width: 100% !important; /* الكرت يأخذ عرض الشاشة */
+        max-width: 100%;
+        min-width: unset; /* إلغاء الـ min-width اللي بيخرب التصميم */
     }
 
-    /* 4. معلومات التواصل والفورم */
-    .contact-info {
-        text-align: center;
+    /* 4. إصلاح فورم التواصل */
+    .contact-form {
+        max-width: 100%;
+        width: 100%;
     }
 
     .contact-item {
         flex-direction: column;
-        gap: 8px;
-    }
-
-    .contact-form {
-        max-width: 100%; /* جعل الفورم يأخذ كامل العرض */
-    }
-
-    /* 5. الفوتر */
-    .footer {
-        padding: 25px 0;
-    }
-}
-
-/* تحسينات إضافية للشاشات الصغيرة جداً (مثل iPhone SE) */
-@media (max-width: 480px) {
-    .logo {
-        font-size: 1.5rem;
-    }
-
-    .btn {
-        width: 100%; /* جعل الأزرار بعرض الشاشة ليسهل الضغط عليها */
         text-align: center;
+        gap: 5px;
     }
 }
-
